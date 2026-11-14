@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Азбука Морзе: знаки препинания — тренажёр онлайн и офлайн</title>
+<meta name="description" content="Бесплатный тренажёр кодов знаков препинания русской и международной азбуки Морзе: таблица с напевами, пошаговые уроки, упражнения на слух. Работает офлайн.">
+<meta name="keywords" content="азбука Морзе, морзянка, знаки препинания, тренажёр Морзе, коды Морзе, напевы Морзе, русская азбука Морзе, международная азбука Морзе, Morse code punctuation, Morse trainer">
+<meta name="author" content="aicfox">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#1f5f5b">
+<link rel="canonical" href="https://aicfox.github.io/morse-punctuation/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Азбука Морзе: знаки препинания — тренажёр онлайн и офлайн">
+<meta property="og:description" content="Бесплатный тренажёр кодов знаков препинания русской и международной азбуки Морзе: таблица с напевами, пошаговые уроки, упражнения на слух. Работает офлайн.">
+<meta property="og:url" content="https://aicfox.github.io/morse-punctuation/">
+<meta property="og:image" content="https://aicfox.github.io/morse-punctuation/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Азбука Морзе: знаки препинания — тренажёр онлайн и офлайн">
+<meta name="twitter:description" content="Бесплатный тренажёр кодов знаков препинания русской и международной азбуки Морзе: таблица с напевами, пошаговые уроки, упражнения на слух. Работает офлайн.">
+<meta name="twitter:image" content="https://aicfox.github.io/morse-punctuation/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Морзянка: знаки препинания","url":"https://aicfox.github.io/morse-punctuation/","description":"Бесплатный тренажёр кодов знаков препинания русской и международной азбуки Морзе: таблица с напевами, пошаговые уроки, упражнения на слух. Работает офлайн.","applicationCategory":"EducationalApplication","operatingSystem":"Any","inLanguage":"ru","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"RUB"}}</script>
+<style>
+:root{--bg:#f3efe6;--fg:#1d1b17;--mut:#6b655a;--card:#fffdf7;--line:#d8d0bf;--ac:#1f5f5b;--acf:#fff;--ok:#2e7d32;--bad:#b3261e;--diff:#f6e3a8;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#16191a;--fg:#ece7da;--mut:#9a9486;--card:#1f2425;--line:#363c3d;--ac:#6fc3bb;--acf:#10201f;--ok:#7fd183;--bad:#ff8a80;--diff:#4a4120;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:17px/1.45 Georgia,"Times New Roman",serif;min-height:100%}
+main{max-width:640px;margin:0 auto;padding:16px}
+h1{font-size:22px;margin:4px 0 12px;letter-spacing:.01em}
+.seg{display:flex;gap:6px;margin:8px 0}
+.seg{flex-wrap:wrap}#tabs button{flex:1 1 auto;padding:10px 6px;font-size:15px}
+.chant{font-size:22px;margin:6px 0}.chant b{color:var(--ac);font-size:26px}.chant span{color:var(--mut)}
+.pg{display:inline-block;margin:2px 8px;white-space:nowrap}
+.seg button,.btn{flex:1;font:inherit;padding:10px 8px;border:1.5px solid var(--line);background:var(--card);color:var(--fg);border-radius:8px;cursor:pointer}
+.seg button.on,.btn.pri{background:var(--ac);color:var(--acf);border-color:var(--ac)}
+button:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.note{color:var(--mut);font-size:15px;margin:8px 0}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}
+th{font-weight:normal;color:var(--mut);font-size:14px}
+tr.d td{background:var(--diff)}
+tr[data-i]{cursor:pointer}
+.ch{font-size:26px;width:2.2em;font-family:ui-monospace,Menlo,Consolas,monospace}
+.nm{font-size:15px;line-height:1.3}.nm b{color:var(--ac)}
+.code{display:inline-flex;align-items:center;gap:5px;min-height:14px}
+.code i{display:block;height:9px;border-radius:5px;background:var(--fg)}
+.code i.s{width:9px}.code i.l{width:27px}
+.code.big{gap:9px;margin:10px 0}.code.big i{height:16px}.code.big i.s{width:16px}.code.big i.l{width:48px}
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:16px;margin-top:10px;text-align:center}
+.q{font-size:64px;line-height:1.1;font-family:ui-monospace,Menlo,Consolas,monospace}
+.qn{color:var(--mut)}
+.ans{min-height:44px;display:flex;justify-content:center;align-items:center;margin:10px 0}
+.row{display:flex;gap:8px;margin-top:8px}
+.key{font-size:30px;padding:8px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.opts .btn{font-size:20px}
+.msg{min-height:28px;margin-top:10px;font-size:18px}
+.ok{color:var(--ok)}.bad{color:var(--bad)}
+.score{color:var(--mut);font-size:15px;margin-top:10px}
+[hidden]{display:none!important}
+a{color:var(--ac)}
+</style>
+</head>
+<body>
+<main>
+<h1>Азбука Морзе: знаки препинания</h1>
+<p class="note">Тренажёр кодов знаков препинания русской и международной азбуки Морзе: таблица с напевами, пошаговый урок и упражнения на слух. Без регистрации, работает офлайн.</p>
+<div class="seg" id="sys" role="group" aria-label="Азбука">
+  <button data-v="i" class="on">Международная</button>
+  <button data-v="r">Русская</button>
+</div>
+<div class="seg" id="tabs" role="group" aria-label="Раздел">
+  <button data-v="t" class="on">Таблица</button>
+  <button data-v="l">Урок</button>
+  <button data-v="a">Знак → код</button>
+  <button data-v="b">Код → знак</button>
+  <button data-v="c">На слух</button>
+</div>
+
+<section id="p-t"></section>
+<section id="p-l" hidden></section>
+<section id="p-a" hidden></section>
+<section id="p-b" hidden></section>
+<section id="p-c" hidden></section>
+<footer class="note" style="margin-top:28px;border-top:1px solid var(--line);padding-top:12px">
+Напевы русской азбуки — по таблице <a href="https://ru.wikipedia.org/wiki/Азбука_Морзе" rel="noopener">Википедии</a> (CC BY-SA). Английские напевы для «!» и «+» авторские.
+Исходный код (MIT): <a href="https://github.com/aicfox/morse-punctuation" rel="noopener">GitHub</a>.
+</footer>
+<noscript><p class="note">Для работы тренажёра нужен JavaScript.</p></noscript>
+</main>
+
+<script>
+// i — международный код, r — русский (null: нет в русской азбуке)
+var S=[
+{c:'.',n:'Точка',i:'.-.-.-',r:'......'},
+{c:',',n:'Запятая',i:'--..--',r:'.-.-.-'},
+{c:':',n:'Двоеточие',i:'---...',r:'---...'},
+{c:';',n:'Точка с запятой',i:'-.-.-.',r:'-.-.-.'},
+{c:'?',n:'Вопросительный знак',i:'..--..',r:'..--..'},
+{c:'!',n:'Восклицательный знак',i:'-.-.--',r:'--..--'},
+{c:"'",n:'Апостроф',i:'.----.',r:'.----.'},
+{c:'"',n:'Кавычки',i:'.-..-.',r:'.-..-.'},
+{c:'( )',n:'Скобки',i:'-.--.-',r:'-.--.-'},
+{c:'-',n:'Дефис, тире',i:'-....-',r:'-....-'},
+{c:'/',n:'Дробная черта',i:'-..-.',r:'-..-.'},
+{c:'=',n:'Знак раздела',i:'-...-',r:'-...-'},
+{c:'@',n:'Собака',i:'.--.-.',r:'.--.-.'},
+{c:'+',n:'Плюс',i:'.-.-.',r:null},
+{c:'Ошибка',n:'Знак ошибки',i:'........',r:'........'}
+];
+var sys='i',tab='t',cur=null,inp='',stats={a:[0,0],b:[0,0],c:[0,0]};
+var $=function(s){return document.querySelector(s)};
+function pool(){return S.filter(function(x){return x[sys]})}
+function glyph(code,big){
+  if(!code)return '<span class="note">нет</span>';
+  return '<span class="code'+(big?' big':'')+'" aria-label="'+code.replace(/\./g,'точка ').replace(/-/g,'тире ')+'">'+
+    code.split('').map(function(c){return '<i class="'+(c=='.'?'s':'l')+'"></i>'}).join('')+'</span>';
+}
+function pick(arr,n){var a=arr.slice(),o=[];while(o.length<n&&a.length)o.push(a.splice(Math.random()*a.length|0,1)[0]);return o}
+
+// звук
+var ac=null;
+var nodes=[],T=null;
+function stopSound(){nodes.forEach(function(o){try{o.stop(0)}catch(e){}});nodes=[]}
+function later(fn,ms){clearTimeout(T);T=setTimeout(fn,ms)}
+function play(code){
+  stopSound();
+  if(!code)return 0;
+  try{
+    ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+    if(ac.state==='suspended')ac.resume();
+    var u=0.08,t0=ac.currentTime+0.05,t=t0;
+    code.split('').forEach(function(c){
+      var d=(c=='.'?1:3)*u,o=ac.createOscillator(),g=ac.createGain();
+      o.frequency.value=600;o.connect(g);g.connect(ac.destination);
+      g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.3,t+.008);
+      g.gain.setValueAtTime(.3,t+d-.008);g.gain.linearRampToValueAtTime(0,t+d);
+      o.start(t);o.stop(t+d+.01);nodes.push(o);t+=d+u;
+    });
+    return (t-t0)*1000;
+  }catch(e){return 0}
+}
+
+// таблица
+function renderT(){
+  var h='<p class="note">Нажмите на строку, чтобы услышать код. Жёлтым выделены знаки, у которых коды в русской и международной азбуке различаются.</p><table><tr><th>Знак</th><th>'+(sys=='i'?'Международный':'Русский')+' код</th><th>Напев</th></tr>';
+  S.forEach(function(x,k){
+    var d=x.i!==x.r;
+    h+='<tr data-i="'+k+'"'+(d?' class="d"':'')+'><td class="ch">'+x.c.replace('Ошибка','Err')+'</td><td>'+glyph(x[sys])+'</td><td class="nm">'+(x[sys]?chantHtml(x[sys],1):'')+'</td></tr>';
+  });
+  h+='</table>';
+  var diff=S.filter(function(x){return x.i!==x.r});
+  h+='<p class="note">Отличия: '+diff.map(function(x){return lShort(x.c)}).join('  ')+'. Например, русская запятая — это международная точка, а русская точка состоит из шести точек.</p>';
+  $('#p-t').innerHTML=h;
+}
+$('#p-t').addEventListener('click',function(e){
+  var r=e.target.closest('tr[data-i]');if(r)play(S[r.dataset.i][sys]);
+});
+
+var decks={};
+function deck(m){var k=m+sys;if(!decks[k]){var P=pool();decks[k]={q:pick(P,P.length),n:P.length,done:0}}return decks[k]}
+function draw(m){var d=deck(m);return d.q.length?d.q.shift():null}
+function good(m){deck(m).done++}
+function retry(m,x){var d=deck(m),i=d.q.length?1+Math.floor(Math.random()*d.q.length):0;d.q.splice(i,0,x)}
+function endCard(m){var d=deck(m);$('#p-'+m).innerHTML='<div class="card"><div class="q" style="font-size:44px">✓</div><div class="msg ok">Все знаки пройдены: '+d.n+' из '+d.n+'.</div><div class="row"><button class="btn pri" data-k="again">Ещё раз</button></div></div>'}
+function scoreLine(m){var d=deck(m);return '<div class="score">Пройдено: '+d.done+' из '+d.n+'</div>'}
+
+// знак → код
+function nextA(){cur=draw('a');if(!cur)return endCard('a');inp='';renderA('')}
+function renderA(msg,cls){
+  $('#p-a').innerHTML='<div class="card"><div class="q">'+cur.c+'</div>'+
+  '<div class="ans" aria-live="polite">'+(inp?glyph(inp,true):'<span class="note">введите код</span>')+'</div>'+
+  '<div class="row"><button class="btn key" data-k=".">•</button><button class="btn key" data-k="-">—</button><button class="btn" data-k="<">⌫</button></div>'+
+  '<div class="row"><button class="btn pri" data-k="ok">Проверить</button><button class="btn" data-k="skip">Показать</button></div>'+
+  '<div class="msg '+(cls||'')+'">'+(msg||'')+'</div></div>'+scoreLine('a');
+}
+$('#p-a').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;var k=b.dataset.k;
+  if(k=='again'){delete decks['a'+sys];nextA();return}
+  if(k=='.'||k=='-'){if(inp.length<9)inp+=k;renderA('');}
+  else if(k=='<'){inp=inp.slice(0,-1);renderA('');}
+  else if(k=='skip'){inp=cur[sys];renderA('Это «'+lShort(cur.c)+'». Запомните и попробуйте снова.','');retry('a',cur);var d=play(inp);stats.a[1]++;later(nextA,Math.max(2500,d+800));}
+  else if(k=='ok'){
+    stats.a[1]++;
+    if(inp===cur[sys]){stats.a[0]++;good('a');renderA('Верно!','ok');later(nextA,1000);}
+    else{renderA('Не совпадает. Правильно: '+cur[sys].replace(/\./g,'•').replace(/-/g,'—'),'bad');retry('a',cur);inp='';later(nextA,2600);}
+  }
+});
+
+// выбор варианта (код → знак и на слух)
+function nextQ(m){
+  var P=pool();cur=draw(m);if(!cur)return endCard(m);
+  var o=pick(P.filter(function(x){return x!==cur}),3);o.push(cur);o=pick(o,4);
+  renderQ(m,o,'','');
+  if(m=='c')play(cur[sys]);
+}
+var opts=[],locked=false;
+function renderQ(m,o,msg,cls){
+  opts=o;locked=false;
+  var q=m=='b'?'<div class="ans">'+glyph(cur[sys],true)+'</div><div class="qn">Что это за знак?</div>'
+    :'<div class="q" style="font-size:44px">♪</div><div class="qn">Послушайте и выберите знак</div><div class="row"><button class="btn" data-k="rep">Повторить</button></div>';
+  $('#p-'+m).innerHTML='<div class="card">'+q+'<div class="opts">'+o.map(function(x,k){return '<button class="btn" data-k="'+k+'">'+x.c+'</button>'}).join('')+
+  '</div><div class="msg '+(cls||'')+'" aria-live="polite">'+(msg||'')+'</div></div>'+scoreLine(m);
+}
+['b','c'].forEach(function(m){
+  $('#p-'+m).addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;var k=b.dataset.k;
+    if(k=='again'){delete decks[m+sys];nextQ(m);return}
+    if(k=='rep'){play(cur[sys]);return}
+    if(locked)return;stopSound();
+    var ok=opts[+k]===cur;stats[m][1]++;if(ok){stats[m][0]++;good(m)}else retry(m,cur);
+    renderQ(m,opts,ok?'Верно!':'Нет, это '+lShort(cur.c)+'.',ok?'ok':'bad');locked=true;
+    var d=ok?0:play(cur[sys]);later(function(){nextQ(m)},ok?1100:Math.max(2400,d+800));
+  });
+});
+
+// Урок: последовательное изучение
+var MN={'......':'то чеч ка то чеч ка','.-.-.-':'крю чоок крю чоок крю чоок','--..--':'оо наа вос кли цаа лаа','---...':'двоо ее тоо чи е ставь','-.-.-.':'тоо чка заа пя таа я','..--..':'вы ку даа смоо три те','.----.':'крю чоок тыы веерх ниий ставь','.-..-.':'ка выы чки ка выы чки','-.--.-':'скоо бку тыы мнее пи шии','-....-':'чёёр точ ку ты пи шии','-..-.':'дрообь здесь пред стаавь те','-...-':'рааз де ли те каа','.--.-.':'со баа каа ре шаа ет','........':'хи ми чи те хи ми чи те','-.-.--':'heey you stoop it goo noow','.-.-.':'add oone to twoo now'};
+var ORD=[0,1,4,5,2,3,8,9,10,11,7,6,12,13,14];
+function fresh(){return{n:2,idx:0,ph:'intro',st:{},t:null,o:[],msg:'',cls:'',lock:false}}
+var L={i:fresh(),r:fresh()};
+function lp(){return ORD.map(function(k){return S[k]}).filter(function(x){return x[sys]})}
+function chantHtml(code,short){
+if(!MN[code])return short?'<span>—</span>':'<span>готового напева нет — запоминайте ритм</span>';return MN[code].split(' ').map(function(w,j){return code[j]=='-'?'<b>'+w+'</b>':'<span>'+w+'</span>'}).join(' ')}
+function ta(code){return code.split('').map(function(c){return c=='.'?'ти':'та'}).join('-')}
+function lShort(c){return c.replace('Ошибка','Err')}
+function startL(){var s=L[sys];if(s.ph=='test'&&!s.t)nextTest();renderL(true)}
+function nextTest(){
+  var s=L[sys],A=lp().slice(0,s.n),need=A.filter(function(x){return (s.st[x.c]||0)<3});
+  var c=need.filter(function(x){return x!==s.t});if(!c.length)c=need;
+  s.t=c[Math.random()*c.length|0];
+  var o=pick(A.filter(function(x){return x!==s.t}),3);o.push(s.t);s.o=pick(o,4);
+  s.msg='';s.cls='';s.lock=false;
+}
+function renderL(snd){
+  var s=L[sys],P=lp(),h='<p class="note">Знаков в уроке: '+Math.min(s.n,P.length)+' из '+P.length+'. Чтобы добавился следующий знак, каждый из изученных нужно трижды подряд распознать на слух.</p>';
+  if(s.ph=='intro'){
+    var x=P[s.idx];
+    h+='<div class="card"><div class="qn">Новый знак</div><div class="q">'+lShort(x.c)+'</div><div class="ans">'+glyph(x[sys],true)+'</div><div class="chant">'+chantHtml(x[sys])+'</div><div class="qn">'+ta(x[sys])+'</div><div class="row"><button class="btn" data-k="play">Послушать</button><button class="btn pri" data-k="next">Дальше</button></div></div>';
+    if(snd)play(x[sys]);
+  }else if(s.ph=='test'){
+    h+='<div class="card"><div class="q" style="font-size:44px">♪</div><div class="qn">Какой знак звучит?</div><div class="row"><button class="btn" data-k="rep">Повторить</button></div><div class="opts">'+
+    s.o.map(function(x,k){return '<button class="btn" data-k="'+k+'">'+lShort(x.c)+'</button>'}).join('')+
+    '</div><div class="msg '+s.cls+'" aria-live="polite">'+s.msg+'</div></div>';
+    if(snd)play(s.t[sys]);
+  }else{
+    h+='<div class="card"><div class="q" style="font-size:44px">✓</div><div class="msg ok">Все знаки изучены. Теперь закрепите их в других разделах.</div></div>';
+  }
+  h+='<div class="score">'+P.slice(0,s.n).map(function(x){var k=Math.min(s.st[x.c]||0,3);return '<span class="pg">'+lShort(x.c)+' '+'●'.repeat(k)+'○'.repeat(3-k)+'</span>'}).join('')+'</div>';
+  h+='<div class="row"><button class="btn" data-k="reset">Начать заново</button></div>';
+  $('#p-l').innerHTML=h;
+}
+$('#p-l').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;var k=b.dataset.k,s=L[sys],P=lp();
+  if(k=='reset'){L[sys]=fresh();renderL(true);return}
+  if(k=='play'){play(P[s.idx][sys]);return}
+  if(k=='rep'){play(s.t[sys]);return}
+  if(k=='next'){s.idx++;if(s.idx>=s.n){s.ph='test';nextTest();}renderL(true);return}
+  if(s.ph!='test'||s.lock)return;
+  var ok=s.o[+k]===s.t;s.lock=true;
+  s.st[s.t.c]=ok?(s.st[s.t.c]||0)+1:0;
+  stopSound();
+  s.msg=ok?'Верно!':'Нет, это '+lShort(s.t.c)+'.';s.cls=ok?'ok':'bad';
+  renderL(false);var d=ok?0:play(s.t[sys]);
+  later(function(){
+    if(L[sys]!==s||tab!='l')return;
+    var A=P.slice(0,s.n);
+    if(A.every(function(x){return (s.st[x.c]||0)>=3})){
+      s.st={};s.t=null;
+      if(s.n<P.length){s.n++;s.idx=s.n-1;s.ph='intro';}else s.ph='done';
+    }else nextTest();
+    renderL(true);
+  },ok?1100:Math.max(2400,d+800));
+});
+
+function show(){clearTimeout(T);stopSound();
+  ['t','l','a','b','c'].forEach(function(p){$('#p-'+p).hidden=p!==tab});
+  [].forEach.call($('#tabs').children,function(b){b.classList.toggle('on',b.dataset.v==tab)});
+  [].forEach.call($('#sys').children,function(b){b.classList.toggle('on',b.dataset.v==sys)});
+  if(tab=='t')renderT();else if(tab=='l')startL();else if(tab=='a')nextA();else nextQ(tab);
+}
+$('#tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(b){tab=b.dataset.v;show()}});
+$('#sys').addEventListener('click',function(e){var b=e.target.closest('button');if(b){sys=b.dataset.v;show()}});
+show();
+</script>
+</body>
+</html>

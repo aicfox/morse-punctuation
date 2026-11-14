@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aicfox.github.io/morse-punctuation/sitemap.xml
