@@ -11,6 +11,8 @@
 <meta name="theme-color" content="#1f5f5b">
 <link rel="canonical" href="https://aicfox.github.io/morse-punctuation/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Азбука Морзе: знаки препинания — тренажёр онлайн и офлайн">
@@ -286,6 +288,7 @@ function show(){clearTimeout(T);stopSound();
 $('#tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(b){tab=b.dataset.v;show()}});
 $('#sys').addEventListener('click',function(e){var b=e.target.closest('button');if(b){sys=b.dataset.v;show()}});
 show();
+if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}
 </script>
 </body>
 </html>
